@@ -3,10 +3,7 @@ import mongoose from "mongoose";
 
 const topic = new mongoose.Schema({
 
-
-levels:[{type:String}],
-
-questionsIds:[]
+levels:{type:Array}
 
 },{autoIndex:false})
 
@@ -15,4 +12,4 @@ levels:1
 })
 
 
-export default mongoose.model('topic',topic)
+export default mongoose.model('topics',topic)

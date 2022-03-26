@@ -1,25 +1,12 @@
 import express from "express";
+import { search } from "../controller/topics.js";
 
 const topicsRouter=express.Router();
 
 
 
-topicsRouter.get('search',(req,res)=>{
+topicsRouter.get('/search',search)
 
-// req.params
-// search by topic name
-
-
-})
-
-
-topicsRouter.get('',(req,res)=>{
-
-
-
-res.end('welcome!')
-
-});
 
 
 

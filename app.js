@@ -9,8 +9,8 @@ app.use(express.json())
 app.use(express.urlencoded())
 
 
-app.use('/topics',topicsRouter);
-app.use('/questions',questionsRouter)
+app.use('/topics/',topicsRouter);
+app.use('/questions/',questionsRouter)
 
 
 export default app

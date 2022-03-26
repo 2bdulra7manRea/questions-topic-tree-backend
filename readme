@@ -1,0 +1,4 @@
+1- make models
+2- make relationals
+3- migrate the data to db
+4- implement restAPI
