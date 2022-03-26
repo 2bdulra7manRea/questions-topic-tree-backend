@@ -14,7 +14,7 @@ import migratesData from "./mirgation/migration.js"
 // });
 
 
-let url="mongodb+srv://petro:ausbildung@questionscluster.pawtr.mongodb.net/pencileDB?retryWrites=true&w=majority"
+let url="mongodb+srv://petro:pmp@questionscluster.pawtr.mongodb.net/pencileDB?retryWrites=true&w=majority"
 
 mongoose.connect(url,(error)=>{
 
