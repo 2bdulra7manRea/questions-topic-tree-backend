@@ -5,6 +5,12 @@ import topicsRouter from "./routes/topics.routes.js";
 const app = express();
 
 
+app.get('/',(req,res)=>{
+
+res.end('WELCOME QUESTIONS-TOPICS SERVER')
+
+})
+
 app.use(express.json())
 app.use(express.urlencoded())
 

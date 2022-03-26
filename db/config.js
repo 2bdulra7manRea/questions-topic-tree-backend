@@ -14,9 +14,9 @@ import migratesData from "./mirgation/migration.js"
 // });
 
 
+let url="mongodb+srv://petro:ausbildung@questionscluster.pawtr.mongodb.net/pencileDB?retryWrites=true&w=majority"
 
-
-mongoose.connect(process.env.DB_URL,(error)=>{
+mongoose.connect(url,(error)=>{
 
 if(!!error){
     console.log(error)
