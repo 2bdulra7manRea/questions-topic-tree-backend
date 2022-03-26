@@ -1,4 +1,4 @@
-import { readFile } from 'fs/promises';
+import fs from 'fs';
 import {migrateQuestions} from "./questionMigrate.js"
 import { migrateTopics } from './topicsMigrate.js';
 
@@ -7,7 +7,7 @@ import { migrateTopics } from './topicsMigrate.js';
 function migratesData(){
 
   const json = JSON.parse(
-    await readFile(
+    fs.readFileSync(
       new URL('./../data.json', import.meta.url)
     )
   );
