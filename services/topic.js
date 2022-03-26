@@ -7,27 +7,32 @@ return topicModel.find(filter)
 }
  
 async function search (query){
-
+console.time('search');
 // 1- get doc from topic model
 
-let topic= await findOne({levels:$in[query.q]});
+let root= query.q;
 
-if(!!annotations && annotations.length!==0){
+let topics= await find({levels:{$in:[root]}})
 
-let qustionsFilter={
-    annotations:{$in:[...topic.levels]}
+
+if(!!topics && topics.length!==0){
+
+let set=new Set();
+topics.forEach((item)=>{
+    if(item.levels!==0){
+    let indexRoot=item.levels.indexOf(root);
+    item.levels.slice(indexRoot).forEach((o)=>{
+    set.add(o)    
+    })}
+})
+
+let questions = await questionService.find({annotations:{$in:[...set.values()]}})
+console.timeEnd('search');
+return {total:questions.length , questions:questions}
 }
-
-let questions = await questionService.find(qustionsFilter)
-
-return questions
-
-}
-
 
 return []
 }
-
 
 function create(doc){
 
@@ -40,7 +45,7 @@ function findOne(filter){
 
     return topicModel.findOne(filter)
     
-    }
+}
 
 
 async function isTopicsFound(){
@@ -52,5 +57,4 @@ if(!!topic && !!topic._id){
 return false
 }
     
-
 export {find,create,findOne , isTopicsFound , search}

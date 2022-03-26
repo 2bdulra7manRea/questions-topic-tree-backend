@@ -4,8 +4,16 @@ import {create, isQuestionsFound} from "../../services/question.js"
 
 export const migrateQuestions=async (questions)=>{
 
-if(!questions || questions.length===0 || await isQuestionsFound()){
-    console.info('the migration of questions is done before ')
+
+if(!questions || questions.length===0){
+    console.error('connot migrate questions ! not valid parameters')
+    return;
+}
+
+let checkingForDbQuestions = await isQuestionsFound()
+
+if(checkingForDbQuestions){
+    console.info('the migration of questions is done before')
     return;
 }
 

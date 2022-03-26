@@ -4,13 +4,17 @@ import { create, isTopicsFound } from "../../services/topic.js"
 
 export const migrateTopics=async (topics)=>{
 
+if(!topics || topics.length===0){
+    console.error('connot migrate topics ! not valid parameters')
+    return;
+}
 
-    if(!topics || topics.length===0 || await isTopicsFound() ){
-        console.info('the migration of topics is done before')
-        return;
-    }
+let checkingForDbTopics = await isTopicsFound()
 
-
+if(checkingForDbTopics){
+    console.info('the migration of topics is done before')
+    return;
+}
 
     for (let i = 0; i < topics.length; i++) {
     console.log('in loop')    
@@ -18,7 +22,6 @@ export const migrateTopics=async (topics)=>{
         levels:[...Object.values(topics[i])]
     }
     let d=await create(topic)
-    console.log(d);
     }
 }
     
