@@ -1,11 +1,17 @@
 # Questions-topics backend Server
 
 It is NodeJS and Express based server that exposes a RESTful API with using MongoDB
-it contain two model topic and question
+
+
+It contains two model :- 
+
 1-Question model
-// each question has question number property and annotations which are array of topics names
+- attributes : number , annotations
+- each question has question number field and annotations field which 
+ it is an array of topics names 
 2-Topic model
-// has levels which is array condieserted as path in the tree 
+- attributes : levels
+- the levels it is an array of topics names
 
 
 ## API endpoint
@@ -13,24 +19,32 @@ it contain two model topic and question
 ### Questions :
 GET / questions/search?q= topic-name
 
+#### First :
 
-## Search Api handling
-
-### First :
 it will get the provieded topic name in query params as the root
 which will start the searching from it.
-so we will get all topics which has the the provided topic-name then 
+so we will get all topics which has the provided topic-name then 
 get sub tree topics and remove repeated topics by puting them in set
 
-### Second :
+#### Second :
 get all questions which its annotations topics match any topic in the set and return the results
 
 
 
 ### Exp : 
-to search about questions which have as specific topic-name in its annotations
-as Cell Structure and organisation as a topic name
-see https://questions-topics.herokuapp.com/questions/search?q=Cell%20Structure%20and%20Organisation 
+
+q = topic-name
+s = skip number for pagination
+
+Inheritance as a topic name  in the query
+see https://questions-topics.herokuapp.com/questions/search?q=Inheritance
+
+
+Reproduction as a topic name  in the query
+10 as skip number 
+see https://questions-topics.herokuapp.com/questions/search?q=Reproduction&s=10
+
+
 the response will have all questions which has the topic name or its branches or leafs in its annotations
 
 

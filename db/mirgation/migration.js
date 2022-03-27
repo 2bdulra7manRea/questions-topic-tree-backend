@@ -24,4 +24,3 @@ migrateTopics(json[1])
 
 
 export default migratesData
-//  storingData(json)
