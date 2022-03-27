@@ -2,7 +2,7 @@ import topicModel from "../db/model/topic.model.js"
 
 
 function find(filter){
-return topicModel.find(filter)
+return topicModel.find(filter,{_id:0 , levels:1})
 }
  
 function create(doc){

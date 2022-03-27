@@ -9,11 +9,8 @@ annotations:{type:Array,index:true}
 
 },{autoIndex:false})
 
-
-
 question.index({
 annotations:1,
-number:-1
 })
 
 

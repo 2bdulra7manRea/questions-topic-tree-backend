@@ -30,7 +30,7 @@ get all questions which its annotations topics match any topic in the set and re
 ### Exp : 
 to search about questions which have as specific topic-name in its annotations
 as Cell Structure and organisation as a topic name
-see https://questions-topics.herokuapp.com/topics/search?q=Cell%20Structure%20and%20Organisation 
+see https://questions-topics.herokuapp.com/questions/search?q=Cell%20Structure%20and%20Organisation 
 the response will have all questions which has the topic name or its branches or leafs in its annotations
 
 

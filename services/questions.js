@@ -2,7 +2,7 @@ import questionModel from "../db/model/question.model.js";
 import * as topicsService from "./topics.js"
 
 function find(filter){
-return questionModel.find(filter)
+return questionModel.find(filter,{_id:0 ,annotations:1 , number:1})
 }
 
 
