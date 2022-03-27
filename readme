@@ -1,4 +1,4 @@
-## Questions-topics backend Server
+# Questions-topics backend Server
 
 It is NodeJS and Express based server that exposes a RESTful API with using MongoDB
 it contain two model topic and question
@@ -8,34 +8,36 @@ it contain two model topic and question
 // has levels which is array condieserted as path in the tree 
 
 
-# Topics :
+## Routing
+
+### Topics :
 POST /topic
 GET / topic
 GET / search?q= topic-name to find questions
 DELETE /topic/id 
 patch / topic/id
 
-# Questions
-POST /Question
+### Questions :
+POST /Question 
 GET / Question/ filter
 DELETE /Question/id 
 patch / Question/id
 
 
-# Search Api
+## Search Api handling
 
-# First :
+### First :
 it will get the provieded topic name in query params as the root
 which will start the searching from it.
 so we will get all topics which has the the provided topic-name then 
 get sub tree topics and remove repeated topics by puting them in set
 
-# Second :
+### Second :
 get all questions which its annotations topics match any topic in the set and return the results
 
 
 
-for Exp : 
+### Exp : 
 to search about questions which have as specific topic-name in its annotations
 as Cell Structure and organisation as a topic name
 see https://questions-topics.herokuapp.com/topics/search?q=Cell%20Structure%20and%20Organisation 
