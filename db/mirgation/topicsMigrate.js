@@ -1,4 +1,4 @@
-import { create, isTopicsFound } from "../../services/topic.js"
+import { create, isTopicsFound } from "../../services/topics.js"
 
 
 

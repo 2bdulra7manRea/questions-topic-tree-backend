@@ -8,20 +8,10 @@ it contain two model topic and question
 // has levels which is array condieserted as path in the tree 
 
 
-## Routing
-
-### Topics :
-POST /topic
-GET / topic
-GET / search?q= topic-name to find questions
-DELETE /topic/id 
-patch / topic/id
+## API endpoint
 
 ### Questions :
-POST /Question 
-GET / Question/ filter
-DELETE /Question/id 
-patch / Question/id
+GET / questions/search?q= topic-name
 
 
 ## Search Api handling
@@ -41,7 +31,7 @@ get all questions which its annotations topics match any topic in the set and re
 to search about questions which have as specific topic-name in its annotations
 as Cell Structure and organisation as a topic name
 see https://questions-topics.herokuapp.com/topics/search?q=Cell%20Structure%20and%20Organisation 
-the response will have all questions which has the topic name or its branches or leafs
+the response will have all questions which has the topic name or its branches or leafs in its annotations
 
 
 

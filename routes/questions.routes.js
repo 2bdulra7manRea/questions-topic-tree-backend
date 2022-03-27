@@ -1,17 +1,9 @@
 import express from "express";
-import { getQuestions } from "../controller/questions.js";
+import { search } from "../controller/questions.js";
 
 const questionsRouter=express.Router();
 
-
-
-
-questionsRouter.get('',getQuestions)
-
-
-
-
-
+questionsRouter.get('/search',search)
 
 export default questionsRouter
 

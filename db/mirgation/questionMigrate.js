@@ -1,10 +1,9 @@
 
-import {create, isQuestionsFound} from "../../services/question.js"
+import {create, isQuestionsFound} from "../../services/questions.js"
+
 
 
 export const migrateQuestions=async (questions)=>{
-
-
 if(!questions || questions.length===0){
     console.error('connot migrate questions ! not valid parameters')
     return;
